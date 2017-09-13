@@ -9,6 +9,7 @@ if(!defined($ABSPATH)) {
 if(!defined($WPINC)) {
     define($WPINC, 'wp-includes');
 }
+require_once ABSPATH.WPINC.'/class-http.php';
 require_once ABSPATH.WPINC.'/http.php';
 
 spl_autoload_register(function ($class) {
