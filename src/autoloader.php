@@ -10,6 +10,7 @@ if(!defined($WPINC)) {
     define($WPINC, 'wp-includes');
 }
 require_once ABSPATH.WPINC.'/functions.php';
+require_once ABSPATH.WPINC.'/plugin.php';
 require_once ABSPATH.WPINC.'/class-http.php';
 require_once ABSPATH.WPINC.'/http.php';
 
