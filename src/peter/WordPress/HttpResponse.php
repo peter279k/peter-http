@@ -28,12 +28,16 @@ class HttpResponse {
 
         $contentType = $this->response['headers']['content-type'];
         $responseFormatKey = array_keys($responseFormat);
+        $className = '';
         foreach($responseFormatKey as $key) {
-            if(!stristr($contentType, $key)) {
-                throw new \RuntimeException('Cannot support this Response data type!');
+            if(stristr($contentType, $key) !== false) {
+                $className = 'peter\\WordPress\\'.$responseFormat[$key];
+                break;
             }
-            $className = 'peter\\WordPress\\'.$responseFormat[$key];
-            break;
+        }
+
+        if($className === '') {
+            throw new \RuntimeException('Cannot support this Response data type!');
         }
 
         return (new $className)->httpResponse($this);
