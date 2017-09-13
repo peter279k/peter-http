@@ -11,10 +11,11 @@ class HttpGetRequest implements HttpRequestInterface {
 
     public function httpRequest(HttpRequest $request) {
         $args = $request->getArgs();
+        $http = new \WP_Http();
         if(count($args) === 0) {
-            $response = wp_remote_get($request->getRequestUrl());
+            $response = $http->request($request->getRequestUrl());
         } else {
-            $response = wp_remote_get($request->getRequestUrl(), $args);
+            $response = $http->request($request->getRequestUrl(), $request->getArgs());
         }
         if(is_wp_error($request)) {
             return 'internal wp error';
