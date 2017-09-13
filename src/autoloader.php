@@ -11,6 +11,7 @@ if(!defined($WPINC)) {
 }
 require_once ABSPATH.WPINC.'/functions.php';
 require_once ABSPATH.WPINC.'/plugin.php';
+require_once ABSPATH.WPINC.'/general-template.php';
 require_once ABSPATH.WPINC.'/class-http.php';
 require_once ABSPATH.WPINC.'/http.php';
 
