@@ -27,9 +27,9 @@ api_key=define_your_api_key
 ## References
 
 Here is the references about the WordPress HTTP API.
-[wp_remote_get](https://codex.wordpress.org/Function_Reference/wp_remote_get)
-[wp_remote_post](https://codex.wordpress.org/Function_Reference/wp_remote_post)
-[wp_remote_request](https://developer.wordpress.org/reference/functions/wp_remote_request)
+- [wp_remote_get](https://codex.wordpress.org/Function_Reference/wp_remote_get)
+- [wp_remote_post](https://codex.wordpress.org/Function_Reference/wp_remote_post)
+- [wp_remote_request](https://developer.wordpress.org/reference/functions/wp_remote_request)
 
 And in our helper class, we use the ```wp_remote_get``` and ```wp_remote_post``` to complete this project.
 
