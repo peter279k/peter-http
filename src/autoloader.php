@@ -1,19 +1,10 @@
 <?php
 
 // include the WP_Http class for HTTP request
-$ABSPATH = 'ABSPATH';
-$WPINC = 'WPINC';
-if(!defined($ABSPATH)) {
-    define($ABSPATH, __DIR__.'/../../');
-}
-if(!defined($WPINC)) {
-    define($WPINC, 'wp-includes');
-}
-require_once ABSPATH.WPINC.'/functions.php';
-require_once ABSPATH.WPINC.'/plugin.php';
-require_once ABSPATH.WPINC.'/general-template.php';
-require_once ABSPATH.WPINC.'/class-http.php';
-require_once ABSPATH.WPINC.'/http.php';
+
+require_once __DIR__.'/../../wp-load.php';
+require_once __DIR__.'/../../class-http.php';
+require_once __DIR__.'/../../http.php';
 
 spl_autoload_register(function ($class) {
     // project-specific namespace prefix
