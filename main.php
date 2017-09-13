@@ -19,9 +19,9 @@ if(!file_exists('./api-key.ini')) {
     die('You need to create the api-key.ini file!');
 }
 
-$apiKey = parse_ini_file('./api-key.ini');
-$accessToken = $apiKey['Facebook'];
-$rebrandlyKey = $apiKey['Rebrandly'];
+$apiKey = parse_ini_file('./api-key.ini', true);
+$accessToken = $apiKey['Facebook']['access_token'];
+$rebrandlyKey = $apiKey['Rebrandly']['api_key'];
 
 $pageId = '167874227121383';
 $formatString = 'https://graph.facebook.com/%s/feed?fields=%s&access_token=%s';
