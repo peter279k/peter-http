@@ -2,9 +2,9 @@
 
 // include the WP_Http class for HTTP request
 
-require_once __DIR__.'/../../wp-load.php';
-require_once __DIR__.'/../../class-http.php';
-require_once __DIR__.'/../../http.php';
+require_once __DIR__.'/../../wp-includes/wp-load.php';
+require_once __DIR__.'/../../wp-includes/class-http.php';
+require_once __DIR__.'/../../wp-includes/http.php';
 
 spl_autoload_register(function ($class) {
     // project-specific namespace prefix
