@@ -15,6 +15,7 @@ class HttpRequest {
     public function __construct($requestUrl, $httpMethod, array $args = []) {
         $this->requestUrl = $requestUrl;
         $this->httpMethod = $httpMethod;
+        $this->args = $args;
     }
 
     public function httpRequest() {
