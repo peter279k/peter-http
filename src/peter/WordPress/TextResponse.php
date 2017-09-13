@@ -10,7 +10,7 @@ class textResponse implements HttpResponseInterface {
 
     public function httpResponse(HttpResponse $response) {
 
-        if(!$this->isTextData($response['body'])) {
+        if(!$this->isTextData($response->getResponseRawBody['body'])) {
             return false;
         }
 

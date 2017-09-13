@@ -10,7 +10,7 @@ class XmlResponse implements HttpResponseInterface {
 
     public function httpResponse(HttpResponse $response) {
 
-        if(!$this->isXmlData($response['body'])) {
+        if(!$this->isXmlData($response->getResponseRawBody['body'])) {
             return false;
         }
 

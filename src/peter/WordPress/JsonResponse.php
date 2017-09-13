@@ -10,7 +10,7 @@ class JsonResponse implements HttpResponseInterface {
 
     public function httpResponse(HttpResponse $response) {
 
-        if(!$this->isJsonData($response['body'])) {
+        if(!$this->isJsonData($response->getResponseRawBody['body'])) {
             return false;
         }
 
