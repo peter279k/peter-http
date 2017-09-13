@@ -38,12 +38,14 @@ $filelds = implode($fileldLists, ',');
 $requestUrl = sprintf($formatString, $pageId, $filelds, $accessToken);
 $request = new HttpRequest($requestUrl, 'GET');
 $responseList = $request->httpRequest();
+var_dump($responseList);
+
 $response = new HttpResponse($responseList);
 $result = json_decode($response->httpResponse(), true);
 var_dump($result);
 
 // HTTP POST example (POST the url to the shorten url via rebrandly service)
-
+/*
 $requestUrl = 'https://api.rebrandly.com/v1/links';
 $domainData['fullName'] = 'rebrand.ly';
 $postData['destination'] = 'https://www.messenger.com';
@@ -62,3 +64,4 @@ $responseList = $request->httpRequest();
 $response = new HttpResponse($responseList);
 $result = json_decode($response->httpResponse(), true);
 var_dump($result);
+*/
