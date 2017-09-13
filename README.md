@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The object-oriented style helper class helps you accessing the WordPress HTTP API easily.
+The object-oriented style helper class helps you accessing the WordPress HTTP functions easily.
 
 ## Usage
 
