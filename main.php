@@ -4,6 +4,11 @@
 * This the main PHP is to present the HTTP Request/Response example.
 */
 
+// show the runtime error
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once __DIR__.'/src/autoloader.php';
 
 use peter\WordPress\HttpRequest;
