@@ -1,6 +1,7 @@
 <?php
 
 // include the WP_Http class for HTTP request
+require_once __DIR__.'/../../wp-includes/functions.php';
 require_once __DIR__.'/../../wp-includes/class-requests.php';
 require_once __DIR__.'/../../wp-includes/class-http.php';
 require_once __DIR__.'/../../wp-includes/http.php';
