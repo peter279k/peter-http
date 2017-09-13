@@ -40,9 +40,9 @@ $request = new HttpRequest($requestUrl, 'GET');
 $responseList = $request->httpRequest();
 var_dump($responseList);
 
-$response = new HttpResponse($responseList);
-$result = json_decode($response->httpResponse(), true);
-var_dump($result);
+//$response = new HttpResponse($responseList);
+//$result = json_decode($response->httpResponse(), true);
+//var_dump($result);
 
 // HTTP POST example (POST the url to the shorten url via rebrandly service)
 /*
