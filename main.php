@@ -11,8 +11,8 @@ error_reporting(E_ALL);
 
 require_once __DIR__.'/src/autoloader.php';
 
-use peter\WordPress\HttpRequest;
-use peter\WordPress\HttpResponse;
+use peter\Http\HttpRequest;
+use peter\Http\HttpResponse;
 
 // read the api-key.ini to get the required API keys.
 if(!file_exists('./api-key.ini')) {
@@ -36,13 +36,31 @@ $filelds = implode($fileldLists, ',');
 
 // HTTP GET example (HTTP GET Facebook page id)
 $requestUrl = sprintf($formatString, $pageId, $filelds, $accessToken);
-$request = new HttpRequest($requestUrl, 'GET');
-$responseList = $request->httpRequest();
-var_dump($responseList);
 
-//$response = new HttpResponse($responseList);
-//$result = json_decode($response->httpResponse(), true);
-//var_dump($result);
+// This is the default CURL options and you can override the options as you want.
+$options = [
+    CURLOPT_RETURNTRANSFER => true,         // return web page
+    CURLOPT_HEADER         => false,        // don't return headers
+    CURLOPT_FOLLOWLOCATION => true,         // follow redirects
+    CURLOPT_ENCODING       => '',           // handle all encodings
+    CURLOPT_USERAGENT      => 'Mozilla',    // the user-agent
+    CURLOPT_AUTOREFERER    => true,         // set referer on redirect
+    CURLOPT_CONNECTTIMEOUT => 120,          // timeout on connect
+    CURLOPT_TIMEOUT        => 120,          // timeout on response
+    CURLOPT_MAXREDIRS      => 10,           // stop after 10 redirects
+    CURLOPT_SSL_VERIFYHOST => 0,            // do verify ssl
+    CURLOPT_SSL_VERIFYPEER => true,         //
+    CURLOPT_VERBOSE        => 1,            //
+    CURLOPT_COOKIEJAR      => '',           // the default cookie file path
+    CURLOPT_HTTPHEADER     => [],           // set the HTTP headers
+];
+
+$request = new HttpRequest($requestUrl, 'GET', $options);
+$responseList = $request->httpRequest();
+
+$response = new HttpResponse($responseList);
+$result = json_decode($response->httpResponse(), true);
+var_dump($result);
 
 // HTTP POST example (POST the url to the shorten url via rebrandly service)
 /*

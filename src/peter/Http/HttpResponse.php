@@ -4,7 +4,7 @@
 * This class help you accessing the WordPress HTTP API easily.
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 class HttpResponse {
 
@@ -31,7 +31,7 @@ class HttpResponse {
         $className = '';
         foreach($responseFormatKey as $key) {
             if(stristr($contentType, $key) !== false) {
-                $className = 'peter\\WordPress\\'.$responseFormat[$key];
+                $className = 'peter\\Http\\'.$responseFormat[$key];
                 break;
             }
         }

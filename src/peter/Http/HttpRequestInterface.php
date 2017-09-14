@@ -5,7 +5,7 @@
 *
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 interface HttpRequestInterface {
     public function httpRequest(HttpRequest $request);

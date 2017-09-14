@@ -4,18 +4,22 @@
 * This class help you accessing the WordPress HTTP API easily.
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 class HttpRequest {
 
     private $requestUrl = '';
     private $httpMethod = '';
     private $args = [];
+    private $curl = null;
 
     public function __construct($requestUrl, $httpMethod, array $args = []) {
         $this->requestUrl = $requestUrl;
         $this->httpMethod = $httpMethod;
+
         $this->args = $args;
+        $this->curl = curl_init($this->requestUrl);
+        curl_setopt_array($this->curl, $args);
     }
 
     public function httpRequest() {
@@ -28,7 +32,7 @@ class HttpRequest {
             throw new \RuntimeException('Incorrect HTTP method request!');
         }
 
-        $className = 'peter\\WordPress\\'.$requestFormat[$this->httpMethod];
+        $className = 'peter\\Http\\'.$requestFormat[$this->httpMethod];
 
         return (new $className)->httpRequest($this);
     }

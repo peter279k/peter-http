@@ -4,7 +4,7 @@
 * This class helps you processing the response type is html data.
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 class HtmlResponse implements HttpResponseInterface {
 
@@ -14,7 +14,7 @@ class HtmlResponse implements HttpResponseInterface {
             return false;
         }
 
-        $className = 'peter\\WordPress\\ResponseFormatter';
+        $className = 'peter\\Http\\ResponseFormatter';
 
         return (new $className)->responseFormat($response);
     }

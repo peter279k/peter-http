@@ -5,7 +5,7 @@
 * This HttpPostRequest class is to do HTTP GET request vai WordPress HTTP API.
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 class HttpPostRequest implements HttpRequestInterface {
 

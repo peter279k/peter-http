@@ -5,7 +5,7 @@
 *
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 interface HttpResponseInterface {
     public function httpResponse(HttpResponse $response);

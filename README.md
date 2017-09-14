@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The object-oriented style helper class helps you accessing the WordPress HTTP functions easily.
+The object-oriented style helper class helps you accessing the HTTP request/response.
 
 ## Usage
 
@@ -33,3 +33,8 @@ Here is the references about the WordPress HTTP API.
 
 And in our helper class, we use the ```wp_remote_get``` and ```wp_remote_post``` to complete this project.
 
+## How to solve the curl(60):SSL certificate problem
+
+## TODO
+
+Include the more available CURL options.

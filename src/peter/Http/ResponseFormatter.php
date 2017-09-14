@@ -4,7 +4,7 @@
 * This helper class is to fomrat the response body.
 */
 
-namespace peter\WordPress;
+namespace peter\Http;
 
 class ResponseFormatter {
 
