@@ -11,10 +11,10 @@ class HttpGetRequest implements HttpRequestInterface {
 
     public function httpRequest(HttpRequest $request) {
 
-        $response = curl_exec($request->curl);
+        $response = curl_exec($request->getCurl());
 
         if(!$response) {
-            return curl_error($request->curl);
+            return curl_error($request->getCurl());
         }
 
         return $response;

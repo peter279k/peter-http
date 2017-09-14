@@ -61,4 +61,8 @@ class HttpRequest {
     public function getArgs() {
         return $this->args;
     }
+
+    public function getCurl() {
+        return $this->curl;
+    }
 }
