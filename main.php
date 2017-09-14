@@ -16,7 +16,7 @@ use peter\Http\HttpResponse;
 
 // read the api-key.ini to get the required API keys.
 if(!file_exists('./api-key.ini')) {
-    die('You need to create the api-key.ini file!');
+    die('You need to create the api-key.ini file!'.PHP_EOL);
 }
 
 $apiKey = parse_ini_file('./api-key.ini', true);
